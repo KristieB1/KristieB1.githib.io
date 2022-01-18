@@ -1,0 +1,90 @@
+<!--about me page
+    
+    Include at least one profile picture.
+
+Include biography (at least 100 words). 
+
+contact form-->
+
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Kristies Portfolio</title>
+        <meta name="description" content="Kristies Portfolio">
+        <meta name="author" content="Kristie">
+        <link rel="stylesheet" href="styles-form.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>About Me</h1>
+            <nav class="nav-class">
+                <a href="index.html">Home </a>
+                <a href="about_me.html" class="active">About Me </a>
+                <a href="Portfolio.html">Portfolio </a>
+            </nav>
+        </header>
+
+        <div>
+            <h2>Hi There</h2>
+        </div>
+        
+
+        <div class="bio-div">
+            <img id="my-pic" src="images/me_1.jpg" alt="Its Me!!.">
+            <p>Welcome to my site, heres abit of info on me. 
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+               ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a. Ipsum
+               consequat nisl vel pretium lectus quam id. Eget arcu dictum varius duis at consectetur 
+               lorem. Sem integer vitae justo eget magna fermentum. At ultrices mi tempus imperdiet
+               nulla malesuada pellentesque elit eget. Ut sem viverra aliquet eget sit amet tellus.
+                Iaculis nunc sed augue lacus viverra vitae congue. Malesuada nunc vel risus commodo.
+                 Diam sit amet nisl suscipit adipiscing bibendum. Amet porttitor eget dolor morbi non
+                arcu risus quis varius. Maecenas ultricies mi eget mauris pharetra et.</p>
+                </div>
+            </p>
+        </div>
+
+        <div class="form-message">
+            <h3>Get in Touch</h3>
+            <p>Send me a message and i will get back to you</p>
+        </div>
+
+        <div>
+    
+            <form action="https://formspree.io/f/xqkneevb" method="post">
+               <div class="form-item">
+                   <label for="name">Name</label>
+                   <input type="text" id="name" name="name">
+               </div> 
+               <div class="form-item">
+                   <label for="mail">Email</label>
+                   <input type="email" id="mail" name="email">
+               </div>
+               <div class="form-item">
+                <label for="phone">Phone</label>
+                <input type="phone" id="phone" name="phone">
+            </div>
+            <div class="form-item">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
+            <div class="form-item">
+                <button type="submit">Send</button>
+            </div>
+            </form>
+    
+        </div>
+
+
+
+        <footer>
+            She Codes Portfolio - Kristie Brandis.
+        </footer>
+
+    </body>
+
+</html>

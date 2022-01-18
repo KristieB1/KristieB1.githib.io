@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Source+Sans+3:wght@200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=family=Corinthia:wght@700&family=Open+Sans:wght@600&family=Source+Sans+3:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Lato:wght@900&family=Open+Sans:wght@600&family=Source+Sans+3:wght@200&display=swap');
+
+html{
+
+    
+    /* font-family: 'Source Sans 3', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+body{
+    /* background-image: url("images/butterfly_background.jpg"); */
+    background-color:  #04253a;
+    color: white;
+   
+    
+
+}
+
+header{
+   
+    font-family: 'Lato', sans-serif;
+    height: 15vh;
+    margin-bottom: 1px;
+
+    
+
+}
+
+h1{
+    color: whitesmoke;
+    text-shadow: white 1px 1px 2px;
+    align-content: center;
+    text-align: center;
+    background-blend-mode: lighten;
+    padding: 1px;
+    font-size: 8vmin;
+    margin-bottom: 1%;
+    
+    
+}
+
+
+
+nav{
+    font-family: 'Source Sans 3', sans-serif;
+    color: white;
+    align-items: center;
+    width: 100%;
+    
+    
+
+}
+
+.nav-class{
+
+    position: center;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0%;
+    padding: 1%;
+    background-color: rgb(31, 16, 126);
+    
+  
+
+    
+}
+
+.nav-class2{
+
+    position: center;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0%;
+    padding: 1%;
+    height: 10vh;
+
+    
+}
+
+a{
+    margin-right: 7%;
+    margin-left: 7%;
+    color: whitesmoke
+}
+/* .nav-text{
+    margin-right: 7%;
+    margin-left: 7%;
+} */
+
+.active{
+background-color: slateblue;
+color: lightblue;
+}
+
+a:hover{
+    color: black;
+    background-color: deepskyblue;
+}
+
+h2{
+    color: white;
+    background-color: darkmagenta;
+    font-size: 6vh;
+}
+
+h3{
+    color: lightblue;
+    max-height: 5vh;
+    margin-top: 2%;
+}
+
+.homepage-div{
+    background-image: url("images/butterfly_background.jpg");
+    background-size: 100%;
+    height: 65vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+ 
+}
+
+#name{
+    
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 20%;
+
+    
+
+}
+
+p{
+    font-family: 'Source Sans 3', sans-serif;
+    color: white;
+    font-size: medium;
+ 
+    
+}
+
+footer{
+    font-size:x-small;
+    text-align: center;
+    height: 5vh;
+}
