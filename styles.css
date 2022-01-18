@@ -116,7 +116,7 @@ h3{
 }
 
 .homepage-div{
-    background-image: url("images/butterfly_background.jpg");
+    background-image: url("images/butterfly_background.jpg" filter: opacity(0.3));
     background-size: 100%;
     height: 65vh;
     width: 100%;
