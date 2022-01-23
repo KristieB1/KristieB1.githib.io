@@ -349,6 +349,9 @@ button {
             height: 3vh;
         }
         
+        nav{
+            font-size: 2.5vh;
+        }
 
 }
 
@@ -423,6 +426,10 @@ button {
 
     }
 
+    nav{
+        font-size: 2.5vh;
+    }
+
     
     #space{
         min-height: 20vh;
@@ -462,8 +469,8 @@ button {
 
     nav{
         display: inline-flex;
-        font-size: small;
         height: 6vh;
+        font-size: 2.5vh;
     
     }
 

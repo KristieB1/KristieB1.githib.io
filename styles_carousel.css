@@ -59,6 +59,8 @@ nav{
     color: white;
     align-items: center;
     width: 100%;
+    font-size: 2vh;
+
 
 }
 
@@ -233,5 +235,9 @@ footer{
     .bio-div p {
         padding-bottom: 10px;
         height: 50%;
+    }
+
+    nav{
+        font-size: 2.5vh;
     }
 }
