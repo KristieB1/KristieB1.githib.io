@@ -424,7 +424,7 @@ footer{
 nav{
         display: inline-flexbox;
         flex-wrap: wrap;
-        font-size: small;
+        font-size: 3vh;
     }
 a{
         margin-left: 2%;
@@ -517,7 +517,7 @@ footer{
 nav{
         display: inline-flexbox;
         flex-wrap: wrap;
-        font-size: small;
+        font-size: 3vh;
     }
 a{
         margin-left: 2%;
