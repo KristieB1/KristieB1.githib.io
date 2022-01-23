@@ -1,30 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Source+Sans+3:wght@200&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=family=Corinthia:wght@700&family=Open+Sans:wght@600&family=Source+Sans+3:wght@200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Source+Sans+3:wght@200&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Lato:wght@100;900&family=Open+Sans:wght@600&family=Playfair+Display:ital,wght@0,400;0,800;1,800&family=Source+Sans+3:wght@200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=family=Corinthia:wght@700&family=Open+Sans:wght@600&family=Source+Sans+3:wght@200&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Lato:wght@900&family=Open+Sans:wght@600&family=Source+Sans+3:wght@200&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Lato:wght@900&family=Open+Sans:wght@600&family=Playfair+Display:wght@700&family=Source+Sans+3:wght@200&display=swap');
 html{
+
 
     
     /* font-family: 'Source Sans 3', sans-serif; */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
     
 }
 
 body{
     /* background-image: url("images/butterfly_background.jpg"); */
-    background-color:  #04253a;
+    background-color:  #101f42;
     color: white;
+}   
    
     
 
-}
+
 
 header{
    
-    font-family: 'Lato', sans-serif;
-    height: 15vh;
+    font-family: 'Playfair Display', serif;
+    font-weight: Extra-bold 800;
+    font-style: normal;
+    height: 13vh;
     margin-bottom: 1px;
+    /* overflow: hidden; */
 
     
 
@@ -32,22 +38,36 @@ header{
 
 h1{
     color: whitesmoke;
-    text-shadow: white 1px 1px 2px;
+    text-shadow: white 1px 2px 2px;
     align-content: center;
     text-align: center;
     background-blend-mode: lighten;
     padding: 1px;
-    font-size: 8vmin;
+    font-size: 5vmin;
     margin-bottom: 1%;
     
     
 }
 
 
+h2{
+    color: #809dcb;
+    font-size: 5vh;
+}
+
+h3{
+    color: #809dcb;
+    max-height: 5vh;
+    margin-top: 2%;
+    font-size: 3vh;
+
+}  
+
 
 nav{
-    font-family: 'Source Sans 3', sans-serif;
-    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    color: #cad8e4;
     align-items: center;
     width: 100%;
     
@@ -63,7 +83,7 @@ nav{
     justify-content: space-between;
     margin: 0%;
     padding: 1%;
-    background-color: rgb(31, 16, 126);
+    background-color: #0b152d;
     
   
 
@@ -75,10 +95,9 @@ nav{
     position: center;
     align-items: center;
     text-align: center;
-    justify-content: space-between;
     margin: 0%;
     padding: 1%;
-    height: 10vh;
+    /* height: 10vh; */
 
     
 }
@@ -93,41 +112,60 @@ a{
     margin-left: 7%;
 } */
 
-.active{
-background-color: slateblue;
-color: lightblue;
-}
 
-a:hover{
-    color: black;
-    background-color: deepskyblue;
-}
+/* .background-image{
+    background-image: url("images/butterfly_background1.jpg");
+    opacity: .8;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+} */
 
-h2{
-    color: white;
-    background-color: darkmagenta;
-    font-size: 6vh;
-}
-
-h3{
-    color: lightblue;
-    max-height: 5vh;
-    margin-top: 2%;
-}
 
 .homepage-div{
-    background-image: url("images/butterfly_background.jpg" filter: opacity(0.3));
-    background-size: 100%;
+    /* background-image: url("images/butterfly_background.jpg"); */
+    
+    display: flex;
+    align-content: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative; 
+    background-image: url("images/butterfly_background.jpg");
+    background-position:center;
+    background-size: 90%;
+    margin-right: 2%;
+    background-repeat: no-repeat;
+    
+    /* background-size: 80%; */
+    /* opacity: .2; */
+    transition: opacity 5s;
     height: 65vh;
     width: 100%;
+    position: relative; 
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
- 
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0; 
+    /* filter: opacity(0.8) */
+    animation: fadeInAnimation ease 5s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: .9;
+            }
 }
+    
+
 
 #name{
     
@@ -135,21 +173,365 @@ h3{
     display: flex;
     align-items: center;
     padding-right: 20%;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
 
     
 
 }
+
+#name h2{
+    
+    /* color: purple; */
+    /* text-shadow: white 1px 1px 2px; */
+    font-family: 'Playfair Display', serif;
+    font-weight: Extra-bold 800;
+    font-style: italic;
+    align-content: center;
+    text-align: center;
+    background-blend-mode: lighten;
+    padding: 1px;
+    font-size: 8vmin;
+    margin-bottom: 1%;
+    background-color: #07164c;
+    background-image: linear-gradient(118deg, #07164c 0%, #7979d4 50%, #dee2ed 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.portfolio_python{
+    display: flex;
+    align-content: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative; 
+    background-image: url("images/logo_python.png");
+    background-position:right;
+    background-size: 15%;
+    margin-right: 5%;
+    background-repeat: no-repeat;
+    
+
+}
+
+/* .portfolio_python::backdrop {    
+    content: "";
+    background-image: url("images/python.png");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+} */
+
+.portfolio_html{
+    display: flex;
+    align-content: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative; 
+    background-image: url("images/logo_html.png");
+    background-position:right;
+    background-size: 15%;
+    margin-right: 5%;
+    background-repeat: no-repeat;
+    
+
+}
+
+.portfolio_django{
+    display: flex;
+    align-content: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative; 
+    background-image: url("images/logo_djano.png");
+    background-position:right;
+    background-size: 15%;
+    margin-right: 5%;
+    background-repeat: no-repeat;
+    
+
+}
+
+.portfolio_react{
+    display: flex;
+    align-content: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative; 
+    background-image: url("images/logo_react.png");
+    background-position:right;
+    background-size: 15%;
+    margin-right: 5%;
+    background-repeat: no-repeat;
+    
+
+}
+
 
 p{
-    font-family: 'Source Sans 3', sans-serif;
+    /* display: flex;  */
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: left;
+    align-self: flex-start;
+    position:relative;
+    font-family: 'Playfair Display', serif;
     color: white;
     font-size: medium;
- 
+    width: 65%;
+    padding:1%
     
 }
 
+
+.embedded-links {
+    display: inline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 1px;
+    margin:0%;
+}
+
+.collapsible {
+    display: flex;
+    align-content: center;
+    background-color: #152957;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    cursor: pointer;
+    padding: 18px;
+    width: 72%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 18px;
+  }
+  
+ 
+  .active, .collapsible:hover {
+    background-color: #182e61;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    width: 70%;
+    display: none;
+    overflow: hidden;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #CAD8E4;
+    background-color: #152957;
+  }
+
+a.active {
+    background-color: #152957;
+    color: #cad8e4;
+    }
+    
+    a:hover{
+        color: #809dcb;
+        background-color: #060c19;
+    }
+
 footer{
-    font-size:x-small;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    color: #cad8e4;
     text-align: center;
     height: 5vh;
+    margin-top: 2%;
+}
+
+
+/* added reszing for device resposiveness, wasnt resizing correctly  */
+
+@media (max-device-width: 750px) {
+
+
+header{
+        height: 20vh;
+    }
+
+h1{
+        height: 6vh;
+    }
+
+
+
+.homepage-div{
+        
+        display: flex;
+        align-content: left;
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative; 
+        background-image: url("images/butterfly_background2.jpg");
+        background-position:center;
+        background-size: 100%;
+        margin-right: 2%;
+        background-repeat: no-repeat;
+        transition: opacity 5s;
+        height: 50vh;
+        width: 100%;
+        position: relative; 
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: -webkit-sticky; 
+        position: sticky;
+        top: 0; 
+        animation: fadeInAnimation ease 5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+            @keyframes fadeInAnimation {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: .9;
+                }
+    }
+        
+    
+    
+#name{
+        
+        height: 100%;
+        display: flex;
+        align-items:center;
+        padding-top: 30%;
+        padding-right: 20%;
+        position: -webkit-sticky; 
+        position: sticky;
+        top: 0;
+    
+    }
+    
+    
+footer{
+        margin-top: 10%;
+        
+    }
+
+
+nav{
+        display: inline-flexbox;
+        flex-wrap: wrap;
+        font-size: small;
+    }
+a{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .nav-class2{
+
+        position: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5%;
+        
+    }
+    
+}
+
+@media (max-width: 750px) 
+{
+
+
+header{
+        height: 20vh;
+    }
+
+h1{
+        height: 6vh;
+    }
+
+
+
+.homepage-div{
+        
+        display: flex;
+        align-content: left;
+        flex-direction: column;
+        flex-wrap: wrap;
+        position: relative; 
+        background-image: url("images/butterfly_background2.jpg");
+        background-position:center;
+        background-size: 100%;
+        margin-right: 2%;
+        background-repeat: no-repeat;
+        transition: opacity 5s;
+        height: 50vh;
+        width: 100%;
+        position: relative; 
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: -webkit-sticky; 
+        position: sticky;
+        top: 0; 
+        animation: fadeInAnimation ease 5s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+            @keyframes fadeInAnimation {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: .9;
+                }
+    }
+        
+    
+    
+#name{
+        
+        height: 100%;
+        display: flex;
+        align-items:center;
+        padding-top: 30%;
+        padding-right: 20%;
+        position: -webkit-sticky; 
+        position: sticky;
+        top: 0;   
+    
+    }
+    
+    
+footer{
+        margin-top: 10%;
+        
+    }
+
+
+nav{
+        display: inline-flexbox;
+        flex-wrap: wrap;
+        font-size: small;
+    }
+a{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .nav-class2{
+
+        position: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5%;
+        
+    }
+    
 }

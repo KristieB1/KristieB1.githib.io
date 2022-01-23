@@ -18,34 +18,144 @@
             <nav class="nav-class">
                 <a href="index.html" >Home</a>
                 <a href="about_me.html" >About Me</a>
-                <a href="Portfolio.html" class="active">Portfolio</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="contact_me.html">Contact me</a>
             </nav>
         </header>
 
-        <div>
-            <h3>Project: Python</h3>
-            <img width="10%" height="10%" src="images/python.png" alt="python logo.">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                 ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a. Ipsum
-                  consequat nisl vel pretium lectus quam id. Eget arcu dictum varius duis at consectetur 
-                  lorem. Sem integer vitae justo eget magna fermentum. At ultrices mi tempus imperdiet
-                   nulla malesuada pellentesque elit eget. Ut sem viverra aliquet eget sit amet tellus.
-                    Iaculis nunc sed augue lacus viverra vitae congue. Malesuada nunc vel risus commodo.
-                     Diam sit amet nisl suscipit adipiscing bibendum. Amet porttitor eget dolor morbi non
-                      arcu risus quis varius. Maecenas ultricies mi eget mauris pharetra et.</p>
+        <div class="portfolio_python">
+            <h3>Project: Python weather</h3>
+            <p>The Python project required knowledge from previous exercises to create functions in python
+                which utlised csv formatted weather data to make pre scripted unit tests pass. 
+                The functions included:
+                Reformating and converting data, identifying min and max position and creating weather summaries using these functions.
+                The most challenging part of this project was learning to use the datetime library to format
+                iso standard date time into human readable text, i was able to overcome this with a few google searches and mentor help.
+                Overall I found this project challenging but highly rewarding; i have included a sample code snippet
+                and test run results below</p>
+            <p>Link to project on github: <a class="embedded-links" href="https://github.com/SheCodesAus/she-codes-python-weather-project-KristieB1"> Weather project</a></p>
+            <!-- example code here -->
+            <button type="button" class="collapsible">Code Snippet</button>
+            <div class="content">
+            <pre><code>
+            import csv
+            from datetime import datetime
+            
+            DEGREE_SYBMOL = u&quot;N{DEGREE SIGN}C&quot;
+            
+            def format_temperature(temp):
+                &quot;&quot;&quot;Takes a temperature and returns it in string format with the degrees
+                    and celcius symbols.
+            
+                Args:
+                    temp: A string representing a temperature.
+                Returns:
+                    A string contain the temperature and &quot;degrees celcius.&quot;
+                &quot;&quot;&quot;
+                return f&quot;{temp}{DEGREE_SYBMOL}&quot;
+            
+            def convert_date(iso_string):
+                &quot;&quot;&quot;Converts and ISO formatted date into a human readable format.
+            
+                Args:
+                    iso_string: An ISO date string..
+                Returns:
+                    A date formatted like: Weekday Date Month Year e.g. Tuesday 06 July 2021
+                &quot;&quot;&quot;
+                date_string=datetime.strptime(iso_string, &quot;%Y-%m-%dT%H:%M:%S%z&quot;)
+                return date_string.strftime(&quot;%A %d %B %Y&quot;)</code></pre>
+            </div>
+            <button type="button" class="collapsible">Test run results</button>
+            <div class="content">
+            <pre><code>
+                PS C:UserskmlbuShecodesshe-codes-python-weather-project-KristieB1&gt; python .run_tests.py
+                Running Tests...
+                
+                ....
+                ----------------------------------------------------------------------
+                Ran 4 tests in 0.004s
+                
+                OK
+                ....
+                ----------------------------------------------------------------------
+                Ran 4 tests in 0.010s
+                
+                OK
+                ....
+                ----------------------------------------------------------------------
+                Ran 4 tests in 0.010s
+                
+                OK
+                .
+                ----------------------------------------------------------------------
+                Ran 1 test in 0.005s
+                
+                OK
+                ......
+                ----------------------------------------------------------------------
+                Ran 6 tests in 0.001s
+                
+                OK
+                ......
+                ----------------------------------------------------------------------
+                Ran 6 tests in 0.000s
+                
+                OK
+                ...
+                ----------------------------------------------------------------------
+                Ran 3 tests in 0.004s
+                
+                OK
+                ...
+                ----------------------------------------------------------------------
+                Ran 3 tests in 0.010s
+                
+                OK
+                PS C:UserskmlbuShecodesshe-codes-python-weather-project-KristieB1&gt;</pre></code>
+            </div>
+    
         </div>
 
-        <div>
-            <h3>Project: Html and CSS</h3>
-            <img width="10%" height="10%" src="images/starry_sky_1.jfif" alt="starry night.">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                 ut labore et dolore magna aliqua. Commodo nulla facilisi nullam vehicula ipsum a. Ipsum
-                  consequat nisl vel pretium lectus quam id. Eget arcu dictum varius duis at consectetur 
-                  lorem. Sem integer vitae justo eget magna fermentum. At ultrices mi tempus imperdiet
-                   nulla malesuada pellentesque elit eget. Ut sem viverra aliquet eget sit amet tellus.
-                    Iaculis nunc sed augue lacus viverra vitae congue. Malesuada nunc vel risus commodo.
-                     Diam sit amet nisl suscipit adipiscing bibendum. Amet porttitor eget dolor morbi non
-                      arcu risus quis varius. Maecenas ultricies mi eget mauris pharetra et.</p>
+        <div class="portfolio_html">
+            <h3>Project: Html and CSS Website</h3>
+            <p>The html and css module project is this portfolio website
+            What i found most challenging was coming up with design ideas and learning how to use CSS
+             to format and style my website. Javascript adds another dimendion to website functionality,
+              in fact the code snippets on this page are stylised with a JS library. 
+              To review the website code, please follow the link to github or inspect via developer tools.
+            </p>
+            <p>Link to project on github: <a class="embedded-links" href="https://github.com/KristieB1/KristieB1.github.io"> Website project</a></p>
+           
+        </div>
+
+        <div  class="portfolio_django">
+            <h3>Project: Django</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Commodo nulla facilisi nullam vehicula ipsum a. Ipsum consequat nisl ve
+             pretium lectus quam id. Eget arcu dictum varius duis at consectetur lorem. Sem integer vitae justo eget magna fermentum. 
+             At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Ut sem viverra aliquet eget sit amet tellus. 
+             Iaculis nunc sed augue lacus viverra vitae congue. Malesuada nunc vel risus commodo. Diam sit amet nisl suscipit adipiscing 
+             bibendum.</p>
+            <p>Link to project on github: <a class="embedded-links" href="https://github.com/KristieB1">  Link Pending </a></p>
+            <button type="button" class="collapsible">Code Snippet</button>
+            <div class="content">
+            <pre><code>my code here</pre></code>
+            </div>
+        </div>
+
+        <div  class="portfolio_react">
+            <h3>Project: React</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Commodo nulla facilisi nullam vehicula ipsum a. Ipsum consequat nisl ve
+                 pretium lectus quam id. Eget arcu dictum varius duis at consectetur lorem. Sem integer vitae justo eget magna fermentum. 
+                 At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Ut sem viverra aliquet eget sit amet tellus. 
+                 Iaculis nunc sed augue lacus viverra vitae congue. Malesuada nunc vel risus commodo. Diam sit amet nisl suscipit adipiscing 
+                 bibendum. </p>
+            <p>Link to project on github: <a class="embedded-links" href="https://github.com/KristieB1">  Link Pending </a></p>
+            <button type="button" class="collapsible">Code Snippet</button>
+            <div class="content">
+            <pre><code>my code here</pre></code>
+            </div>
         </div>
 
 
@@ -55,5 +165,9 @@
         </footer>
 
     </body>
-
+    <script src="portfolio.js"></script>
+    <!-- link to online library to defect code snippet language and format accordingly -->
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </html>
