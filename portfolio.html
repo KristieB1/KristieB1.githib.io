@@ -130,31 +130,219 @@
 
         <div  class="portfolio_django">
             <h3>Project: Django</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Commodo nulla facilisi nullam vehicula ipsum a. Ipsum consequat nisl ve
-             pretium lectus quam id. Eget arcu dictum varius duis at consectetur lorem. Sem integer vitae justo eget magna fermentum. 
-             At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Ut sem viverra aliquet eget sit amet tellus. 
-             Iaculis nunc sed augue lacus viverra vitae congue. Malesuada nunc vel risus commodo. Diam sit amet nisl suscipit adipiscing 
-             bibendum.</p>
-            <p>Link to project on github: <a class="embedded-links" href="https://github.com/KristieB1">  Link Pending </a></p>
+            <p>This project was a news application created via django with Python. I found the Django platform interesting and relatively easy to implement. What i found most challenging 
+                with this project was CSS and mobile responsiveness</p>
+            <p>Link to project: <a class="embedded-links" href="https://thawing-fortress-65766.herokuapp.com/news/">  Website link </a></p>
             <button type="button" class="collapsible">Code Snippet</button>
             <div class="content">
-            <pre><code>my code here</pre></code>
+            <pre><code>class IndexView(generic.ListView):
+                template_name = 'news/index.html'
+                context_object_name = 'latest_stories'
+            
+                def get_queryset(self):
+                    '''Return all news stories.'''
+                    return NewsStory.objects.all().order_by('-pub_date')[:4]
+            
+                def get_context_data(self, **kwargs):
+                    context = super().get_context_data(**kwargs)
+                    context['category_filter'] = Category.objects.all()
+                    context['author_filter'] = CustomUser.objects.all()
+                    return context
+            
+            class AllView(generic.ListView):
+                template_name = 'news/allNews.html'
+                context_object_name = 'all_stories'
+            
+                def get_queryset(self):
+                    '''Return all news stories.'''
+                    newest = self.request.GET.get('sort')
+                    dateQuery = NewsStory.objects.all()
+                    if newest=='fish':
+                        dateQuery = dateQuery.order_by('-pub_date')
+                    else:
+                        dateQuery = dateQuery.order_by('pub_date')
+                    return dateQuery
+            
+                def get_context_data(self, **kwargs):
+                    context = super().get_context_data(**kwargs)
+            
+                    return context
+            </pre></code>
             </div>
         </div>
 
         <div  class="portfolio_react">
             <h3>Project: React</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Commodo nulla facilisi nullam vehicula ipsum a. Ipsum consequat nisl ve
-                 pretium lectus quam id. Eget arcu dictum varius duis at consectetur lorem. Sem integer vitae justo eget magna fermentum. 
-                 At ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget. Ut sem viverra aliquet eget sit amet tellus. 
-                 Iaculis nunc sed augue lacus viverra vitae congue. Malesuada nunc vel risus commodo. Diam sit amet nisl suscipit adipiscing 
-                 bibendum. </p>
-            <p>Link to project on github: <a class="embedded-links" href="https://github.com/KristieB1">  Link Pending </a></p>
+            <p>For this project i created a crowdfunding website called ecofund using django api framework and react front end. 
+                The project intorduced react javascript and integrating 2 applications. What i am most proud of; my custom error pages for 404, 401 type errors. What i found most challenging was learning react JS and implementing CSS </p>
+            <p>Link to project: <a class="embedded-links" href="https://cryptic-caverns-56653.herokuapp.com/allProjects">  Link  </a></p>
             <button type="button" class="collapsible">Code Snippet</button>
             <div class="content">
-            <pre><code>my code here</pre></code>
+            <pre><code>class PledgeSerializer(serializers.Serializer):
+
+    
+
+                id = serializers.ReadOnlyField()
+                amount = serializers.IntegerField()
+                comment = serializers.CharField(max_length=200, required=False)
+                anonymous = serializers.BooleanField()
+            
+                   
+            
+                def validate(self, data):
+                    projectId = data['project_id']
+                    project = Project.objects.get(pk=projectId)
+                    pledgeType = project.pledge_type.pledge_type_name
+                    if  pledgeType != 'financial' and  data['anonymous']:
+                        raise serializers.ValidationError (f"Pledge cannot be anonymous for this project")
+                    return data
+                   
+            
+                
+                # supporter = serializers.CharField(max_length=200)
+                project_id = serializers.IntegerField()
+                project_title = serializers.ReadOnlyField(source='project.title')
+                # pledge_type_id = serializers.IntegerField()
+                pledge_type = serializers.ReadOnlyField(source='project.pledge_type.pledge_type_name')
+                supporter = serializers.ReadOnlyField(source='supporter.id')
+                supporter_name = serializers.SerializerMethodField()
+            
+                def get_supporter_name (self, obj):
+                    anonymous = obj.anonymous
+                    obj.supporter_name = obj.supporter.username
+                    if anonymous == True:
+                        return "Anonymous"
+                    elif anonymous == False:
+                        return obj.supporter_name
+            
+            
+               
+                
+                # (source='supporter.username')
+            
+                def create(self, validated_data):
+                    # print(**validated_data)
+                    return Pledge.objects.create(**validated_data)
+                    
+            
+            class CategorySerializer(serializers.Serializer):
+                id = serializers.ReadOnlyField()
+                category_name = serializers.CharField(max_length=200)
+            
+                def create(self, validated_data):
+                    return Category.objects.create(**validated_data)
+            
+            
+            class ProjectSerializer(serializers.Serializer):
+                id = serializers.ReadOnlyField()
+                title = serializers.CharField(max_length=200)
+                blurb = serializers.CharField(max_length=200)
+                category_id = serializers.IntegerField()
+                goal = serializers.IntegerField()
+                goal_date = serializers.DateField()
+                # progress = serializers.IntegerField()
+                primary_image = serializers.URLField()
+                status = serializers.SerializerMethodField()
+                is_open = serializers.BooleanField()
+                is_archived = serializers.BooleanField()
+                date_created = serializers.SerializerMethodField()
+                pledge_type_id = serializers.IntegerField()
+                total_pledged = serializers.SerializerMethodField()
+                progress_perc = serializers.SerializerMethodField()
+            
+                def get_date_created(self, obj):
+                    return obj.date_created.date()
+            
+                def get_total_pledged(self, obj):
+                    return Project.objects.filter(pk=obj.id).annotate(
+                        total_pledged=Sum('pledges__amount')
+                    )[0].total_pledged
+            
+                def get_progress_perc(self, obj):
+                    total_pledged = Project.objects.filter(pk=obj.id).annotate(
+                        total_pledged=Sum('pledges__amount')
+                    )[0].total_pledged
+                    if total_pledged:
+                        return round(((total_pledged/obj.goal)*100),2)
+                    else:
+                        return 0</pre></code>
+            </div>
+        </div>
+
+        <div  class="portfolio_react">
+            <h3>Project: React Group Project</h3>
+            <p>This was a group project, i worked in a team of 4 to create an application to allow shecodes students, mentors and admins to post, edit and export digital sticky notes.
+                The project had a 4 week timeframe including planning, client meetings and a final presentation of completed project. What i found most challenging was utilsing github and working through merging issues. 
+                Our team worked well together and used a trello board for planning. What i am most proud of; our team work, planning and the backend API code i implemented including dynamic user auth assignment </p>
+            <p>Link to project: <a class="embedded-links" href="https://shrouded-wave-23056.herokuapp.com/">  Link </a></p>
+            <button type="button" class="collapsible">Code Snippet</button>
+            <div class="content">
+            <pre><code>class IsSuperUser(permissions.IsAdminUser):
+                # Checks that the user performing the task is the SuperUser only
+                def has_permission(self, request, view):
+                    return bool(request.user and request.user.is_superuser)
+            
+            class IsSuperUserOrAdmin(permissions.BasePermission):
+                # Checks that the user performing the task is either the SuperUser or Admin
+                def has_permission(self, request, view):
+                    return bool(request.user and (request.user.is_superuser or request.user.is_shecodes_admin))
+            
+            # Object Level Permission for Editing Profile info
+            class IsOwnerOrReadOnly(permissions.BasePermission):
+                message = "Editing Profile data is restricted to the owner of this profile only."
+            
+                def has_object_permission(self, request, view, obj):
+                    if request.method in permissions.SAFE_METHODS:
+                        return True
+            
+                    return obj.owner == request.user</pre></code>
+                <pre><code>class StickyNoteSerializer(serializers.Serializer):
+                    id = serializers.ReadOnlyField()
+                    win_comment = serializers.CharField(max_length=200)
+                    # link to owner
+                    guest = serializers.SerializerMethodField()
+                    owner = serializers.ReadOnlyField(source='owner.id', required=False)
+                    owner_name = serializers.ReadOnlyField(source='owner.username', required=False)
+                
+                    # link to WinWall  and status
+                    win_wall_id = serializers.IntegerField()
+                
+                    # mthod 2 using a computed status, think this is a better method 
+                    win_wall_live = serializers.SerializerMethodField()
+                    # definiing guest based on if owner applied to sticky note 
+                    def get_win_wall_live(self, obj):
+                        win_wall_info = WinWall.objects.get(pk=obj.win_wall_id)
+                        is_live = win_wall_info.is_open()
+                        if is_live == True:
+                            return 'Live'
+                        else:
+                            return 'Closed'
+                
+                    def get_guest(self, obj):
+                        return obj.owner == None
+                
+                    def create(self, validated_data):
+                        return StickyNote.objects.create(**validated_data)
+                
+                    def is_false_or_none(self, bool):
+                        return bool == False or bool == None
+                
+                    def compute_status(self,obj):
+                        is_live =  self.get_win_wall_live(obj)
+                        if is_live == 'Live':
+                            return 'Live'
+                        elif is_live == 'Closed' and self.is_false_or_none(obj.is_approved) and self.is_false_or_none(obj.is_archived):
+                            return 'Unapproved'
+                        elif obj.is_approved == True and is_live == 'Closed' and self.is_false_or_none(obj.is_archived):
+                            return 'Approved'
+                        elif obj.is_approved == True and obj.is_archived == True:
+                            return 'Archived'
+                        elif self.is_false_or_none(obj.is_approved) and obj.is_archived == True:
+                            return 'Archived'
+                        elif obj.is_approved == True and self.is_false_or_none(obj.is_archived):
+                            return 'Approved'
+                        else:
+                            return 'Unapproved'</pre></code>
             </div>
         </div>
 
